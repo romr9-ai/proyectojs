@@ -1,8 +1,4 @@
-// 1. Capturar entradas
-let userName = prompt("Ingrese su nombre:");
-alert(`Hola, ${userName}! Bienvenido al sistema de gestión de productos de cuidado post tatuaje.`);
-
-// 2. Declarar variables y objetos
+// Clase para representar un producto de cuidado post tatuaje
 class ProductoCuidado {
     constructor(nombre, precio, tipo) {
         this.nombre = nombre;
@@ -13,7 +9,12 @@ class ProductoCuidado {
 
 let productos = [];
 
-// Función para agregar productos
+// Función para mostrar el menú y capturar la opción del usuario
+function mostrarMenu() {
+    return prompt("Elige una opción:\n1. Agregar producto\n2. Buscar producto\n3. Filtrar productos por tipo\n4. Salir");
+}
+
+// Función para agregar un producto
 function agregarProducto() {
     let nombre = prompt("Ingrese el nombre del producto:");
     let precio = prompt("Ingrese el precio del producto:");
@@ -48,13 +49,29 @@ function filtrarProductos() {
     }
 }
 
-// Agregar algunos productos de ejemplo
-agregarProducto();
-agregarProducto();
-agregarProducto();
+// Función principal para manejar el menú y las opciones
+function gestionarProductos() {
+    let opcion;
+    do {
+        opcion = mostrarMenu();
+        switch (opcion) {
+            case "1":
+                agregarProducto();
+                break;
+            case "2":
+                buscarProducto();
+                break;
+            case "3":
+                filtrarProductos();
+                break;
+            case "4":
+                alert("Saliendo del sistema...");
+                break;
+            default:
+                alert("Opción no válida, intenta de nuevo.");
+        }
+    } while (opcion !== "4");
+}
 
-// Buscar un producto
-buscarProducto();
-
-// Filtrar productos por tipo
-filtrarProductos();
+// Iniciar la gestión de productos
+gestionarProductos();
