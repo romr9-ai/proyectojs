@@ -1,0 +1,208 @@
+/* Base Styles */
+header {
+    text-align: center; /* Centra el contenido del header */
+}
+
+header img.logo {
+    margin-top: 5vw; /* Margen superior */
+    margin-bottom: 1vw; /* Margen inferior */
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 10px; /* Espacio entre elementos del menu */
+}
+
+header nav ul li a:hover {
+    background-color: #6b1aff; /* Color morado oscuro cuando se pasa el mouse */
+}
+
+.custom-button {
+    background-color: #cf92db; /* Personaliza botones de menu nav */
+    color: white;
+    border: none;
+    border-radius: 25%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    transition-duration: 0.4s; 
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-item {
+        margin-bottom: .5px; /* Reduce el espacio entre los botones */
+    }
+    
+    .custom-button {
+        margin-top: 1px; /* Ajusta el margen superior */
+        margin-bottom: 1px; /* Ajusta el margen inferior */
+    }
+}
+
+
+.purple-text {
+    color: rgb(122, 7, 133); /* Cambia el color a morado */
+}
+
+.about-section {
+    text-align: center; /* Esto centrará horizontalmente el contenido dentro del div */
+}
+
+.about-section img {
+    display: inline-block; /* Esto permite que el margen automático funcione correctamente */
+    margin: 0 auto; /* Esto centra la imagen horizontalmente */
+}
+
+.tattoo-section {
+    text-align: center;
+    margin-bottom: 20px; /* Espacio entre la imagen y el botón */
+}
+
+.pink-button { /* H1 de tatto station */
+    background-color: pink;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* Relación de aspecto 16:9 (divide 9 entre 16 = 0.5625) */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Opcional: elimina el borde del iframe */
+}
+
+.carousel-image {
+    width: 60%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+.img-tattoo1 { /* imagenen 1 de acerca de */
+    max-height: 450px;
+    max-width: 300px;
+}
+.img-tattoo2 { /* imagenen 2 de acerca de */
+    max-height: 300px;
+    max-width: 450px;
+}
+.zona-creativa-heading { /* texto de tattoo */
+    margin-top: 1vw;
+    margin-bottom: 3vw;
+}
+.col-bg-light {
+    background-color: #f8f9fa; /* bg-light equivalent */
+    padding: 1.5rem; /* p-4 equivalent */
+    border-radius: .25rem; /* rounded equivalent */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15); /* shadow equivalent */
+}
+.img-art {
+    max-height: 70%;
+    max-width: 70%;
+}
+.carousel-image { /* estilo de carrusel */
+    width: 40%; 
+    height: 334px; 
+}
+
+.event-text { /* texto de community */
+    background-color: #d2c0e4;
+    margin-bottom: 8vw;
+    color: #3a09c2;
+    font-weight: bold;
+}
+.event-text:first-of-type { /* texto de community */
+    margin-top: 2vw; 
+}
+
+.iframe-container iframe {
+    width: 600px;
+    height: 450px;
+    border: 0;
+}
+
+/* Media Queries */
+
+/* dispositivos peque;os  (576px) */
+@media (max-width: 575.98px) {
+    header img.logo {
+        margin-top: 10vw; 
+    }
+
+    .custom-button {
+        font-size: 14px; /*fuente peque;a */
+        margin-top: 2vw;
+        margin-bottom: 5vw;
+    }
+
+    .pink-button {
+        font-size: 14px; /* fuente peque;a */
+        padding: 8px;
+    }
+}
+
+/* dispositivos medianos (tablets, 576px y mas) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    header img.logo {
+        margin-top: 8vw; 
+    }
+
+    .custom-button {
+        font-size: 15px; 
+        margin-top: 1.5vw;
+        margin-bottom: 4vw;
+    }
+
+    .pink-button {
+        font-size: 15px; 
+        padding: 9px;
+    }
+}
+
+/* dispositivos grandes (pc, 992px ) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    header img.logo {
+        margin-top: 6vw; 
+    }
+
+    .custom-button {
+        font-size: 16px; 
+        margin-top: 1vw;
+        margin-bottom: 3vw;
+    }
+
+    .pink-button {
+        font-size: 16px; 
+        padding: 10px;
+    }
+}
+
+/* Dispositivos extra grandes  (1200px ) */
+@media (min-width: 1200px) {
+    header img.logo {
+        margin-top: 5vw; 
+    }
+
+    .custom-button {
+        font-size: 16px; 
+        margin-top: 1vw;
+        margin-bottom: 3vw;
+    }
+
+    .pink-button {
+        font-size: 16px; 
+        padding: 10px;
+    }
+}
