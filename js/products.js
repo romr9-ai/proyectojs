@@ -9,13 +9,13 @@ class ProductoCuidado {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Add example products if localStorage is empty
+    
     if (!localStorage.getItem('productos')) {
         agregarProductosEjemplo();
     }
     mostrarProductos();
 
-    // Event listener for the search input
+    
     document.getElementById('searchInput').addEventListener('input', filtrarProductos);
     mostrarCarrito();
 });
@@ -55,7 +55,7 @@ function mostrarProductos(filtrados = null) {
             catalog.appendChild(catalogItem);
         });
 
-        // Add event listeners to "Add to Cart" buttons
+       
         document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', agregarAlCarrito);
         });
