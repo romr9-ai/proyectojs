@@ -126,6 +126,7 @@ function calcularTotal() {
     return carrito.reduce((total, prod) => total + (prod.precio * prod.cantidad), 0).toFixed(2);
 }
 
+// Función para mostrar el carrito
 function mostrarCarrito() {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     let cart = document.getElementById('cart');
@@ -165,3 +166,31 @@ function mostrarCarrito() {
         cart.innerHTML = '<p>El carrito está vacío.</p>';
     }
 }
+
+// Función para finalizar la compra
+function finalizarCompra() {
+    // Vaciar el carrito
+    localStorage.removeItem('carrito');
+
+    // Mostrar mensaje
+    alert('¡Gracias por tu compra! Tu carrito ha sido vaciado.');
+
+    // Actualizar la vista del carrito
+    mostrarCarrito();
+}
+
+// Ejecutar código cuando el documento esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    if (!localStorage.getItem('productos')) {
+        agregarProductosEjemplo();
+    }
+    mostrarProductos();
+    document.getElementById('searchInput').addEventListener('input', filtrarProductos);
+    mostrarCarrito();
+
+    // Agregar el manejador de eventos para el botón "Finalizar compra"
+    const finalizarCompraBtn = document.getElementById('finalizarCompraBtn');
+    if (finalizarCompraBtn) {
+        finalizarCompraBtn.addEventListener('click', finalizarCompra);
+    }
+});
